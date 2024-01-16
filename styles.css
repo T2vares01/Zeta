@@ -1,0 +1,26 @@
+@import url("css/home.css");
+@import url("css/login.css");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Rubik&display=swap');
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+
+:root {
+    --cor-de-fundo: #FFDBC5;
+    --cor-fundo-secundaria: #2E112D;
+    --cor-Vermelho-paleta: #B01C33;
+    --cor-laranja-paleta: #EF4339;
+    --cor-link: #EB9B00;
+    --cor-background: #ef42391c;
+    --fonte-principal: "Montserrat";
+    /*
+    --azul-degrade: linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%);
+    --fonte-principal: "Poppins";
+    --fonte-secundario: "Josefin Sans";*/
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+    font-family: var(--fonte-principal);
+    color: var(--azul);
+    font-size: 16px;
+    font-weight: 400;
+}
