@@ -1,0 +1,13 @@
+{% extends "home.html" %}
+
+{% block titulo %}
+Perfil - {{ usuario }}
+{% endblock %}
+
+{%block body %}
+<body>
+    <p>local do site</p>
+    <p>{{ usuario}}</p>
+    <a href="{{url_for('logout')}}">Voltar</a>
+</body>
+{% endblock %}
