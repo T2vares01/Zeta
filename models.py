@@ -9,10 +9,10 @@ def load_usuario(id_usuario):
     return Usuario.query.get(int(id_usuario))
 class Usuario(database.Model, UserMixin):
     id = database.Column(database.Integer, primary_key = True)
-    username = database.Column(database.String, nullable = False)
+    username = database.Column(database.String, nullable = False ,unique = True)
     email = database.Column(database.String, nullable = False,unique = True)
     senha = database.Column(database.String, nullable = False)
-    post = database.relationship("Post", backref = "nome_usuario",lazy = True)
+    post = database.relationship("Post", backref = "usuario",lazy = True)
 
 class Post(database.Model):
     id = database.Column(database.Integer, primary_key = True)
