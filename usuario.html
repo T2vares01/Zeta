@@ -1,13 +1,31 @@
 {% extends "home.html" %}
 
 {% block titulo %}
-Perfil - {{ usuario }}
+Perfil - {{ usuario.username }}
 {% endblock %}
 
 {%block body %}
 <body>
-    <p>local do site</p>
-    <p>{{ usuario}}</p>
-    <a href="{{url_for('logout')}}">Voltar</a>
+{% include "navbar.html" %}
+
+    <h1>local do site</h1>
+
+{% if form %}
+    <form method = "POST" enctype = "multipart/form-data">
+        {{ form.csrf_token }}
+
+        {{ form.foto() }}
+        {{ form.botao() }}
+
+    </form>
+{% endif %}
+
+    <p>{{ usuario.username }}</p>
+    
+    {% for post in usuario.post %}
+        <img src="{{ url_for('static', filename = 'fotos_posts/{}'.format(post.post)) }}">
+    {% endfor %}
+
 </body>
+
 {% endblock %}

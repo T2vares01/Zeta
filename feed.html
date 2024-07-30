@@ -1,0 +1,18 @@
+{% extends "home.html" %}
+
+{% block titulo %}
+Labirntp
+{% endblock %}
+
+{%block body %}
+{% include "navbar.html" %}
+
+<h1>Aba principal</h1>
+
+    {% for post in post %}
+        <a href="{{url_for('perfil', id_usuario = post.id_usuario )}}">
+            <img src="{{ url_for('static', filename = 'fotos_posts/{}'.format(post.post)) }}">
+        </a>
+    {% endfor %}
+
+{% endblock %}
